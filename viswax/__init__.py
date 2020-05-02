@@ -1,6 +1,4 @@
-from .viswax.py import Viswax
-
+from .viswax import Viswax
 
 def setup(bot):
-    cog = Viswax(bot)
-    bot.add_cog(cog)
+    bot.add_cog(Viswax())
