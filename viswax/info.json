@@ -1,0 +1,16 @@
+{
+    "author": [
+        "Jenke",
+        "Hal"
+    ],
+    "name": "Viswax",
+    "disabled": false,
+    "short": "Todays Viswax",
+    "description": "Rips todays viswax from some website we found",
+    "tags": [
+        "vis",
+        "viswax"
+    ],
+    "hidden": false,
+    "min_bot_version": "3.3.0"
+}
