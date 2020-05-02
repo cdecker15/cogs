@@ -11,6 +11,10 @@
         "vis",
         "viswax"
     ],
+	"requirements": [
+		"requests",
+		"beautifulsoup4"
+	],
     "hidden": false,
     "min_bot_version": "3.3.0"
 }
