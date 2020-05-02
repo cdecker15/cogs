@@ -94,7 +94,6 @@ def calc_cost(rune):
 
     if isinstance(result, str):
         result = int(result.replace(',', ''))
-        result = result * amount
 
     return result * amount
 
