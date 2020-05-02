@@ -9,7 +9,7 @@ import json
 a = []
 
 
-def pullVis:
+def pullVis():
     URL = 'https://warbandtracker.com/goldberg/'
     page = requests.get(URL)
 
