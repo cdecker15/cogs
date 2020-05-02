@@ -21,5 +21,5 @@ class Viswax(commands.Cog):
 
     @commands.command()
     async def viswax(self, ctx):
-    """Checks the daily viswax combinations in Runescape."""
+        """Checks the daily viswax combinations in Runescape."""
         await ctx.send("First Rune: " + a[0] + "\n" + "Second Rune: " + a[1] + ", " + a[2] + ", " + a[3])
