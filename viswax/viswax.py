@@ -92,9 +92,10 @@ def calc_cost(rune):
 
     result = data['item']['current']['price']
 
-    if type(result == 'str'):
-        result = str(result.replace(',', ''))
-        result = int(result)
+    if isinstance(result, str):
+        result = (result.replace(',', '')
+        return int(result) * amount
+
     return result * amount
 
 
