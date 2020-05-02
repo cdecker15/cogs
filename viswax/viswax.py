@@ -18,6 +18,10 @@ a = []
 for tag in results.find_all('b'):
     a.append(tag.string)
 
+with request.urlopen('http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=32092') as response:
+    source = response.read()
+    data = json.loads(source)
+
 
 class Viswax(commands.Cog):
 
@@ -29,7 +33,16 @@ class Viswax(commands.Cog):
     @commands.command()
     async def myviswax(self, ctx):
         """Calculates the cost of your daily viswax combinations in Runescape."""
-        with request.urlopen('http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=32092') as response:
+        with request.urlopen(
+                'http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=32092') as response:
             source = response.read()
             data = json.loads(source)
-        await ctx.send("Viswax costs " + data['current']['price'])
+
+        viswax_cost = data['item']['current']['price']
+
+        if 'k' in viswax_cost:
+            viswax_cost = viswax_cost[:-1]
+            viswax_cost = float(viswax_cost) * 1000
+
+        viswax_cost = int(viswax_cost) * 100
+        await ctx.send("Today's viswax cost: " + viswax_cost)
