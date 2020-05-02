@@ -16,28 +16,27 @@ def un_escape(s):
     return s
 
 
-def check_answer(self):
-    return True
-
-
-async def wait_for_answer(self):
-    try:
-        message = await self.ctx.bot.wait_for(
-            "message", check=self.check_answer(self), timeout=10
-        )
-    except asyncio.TimeoutError:
-        if time.time() - self._last_response >= 10:
-            await self.ctx.send(_("Guys...? Well, I guess I'll stop then."))
-            self.stop()
-            return False
-    else:
-        self.scores[message.author] += 1
-        reply = _("You got it {user}! **+1** to you!").format(user=message.author.display_name)
-        await self.ctx.send(reply)
-    return True
-
-
 class TriviaPlus(commands.Cog):
+
+    def check_answer(self, correct_answer):
+        return True
+
+    async def wait_for_answer(self, correct_answer):
+        try:
+            message = await self.ctx.bot.wait_for(
+                "message", check=self.check_answer(self, correct_answer), timeout=10
+            )
+        except asyncio.TimeoutError:
+            if time.time() - self._last_response >= 10:
+                await self.ctx.send(_("Guys...? Well, I guess I'll stop then."))
+                self.stop()
+                return False
+        else:
+            self.scores[message.author] += 1
+            reply = _("You got it {user}! **+1** to you!").format(user=message.author.display_name)
+            await self.ctx.send(reply)
+        return True
+
     @commands.command()
     async def triviaplus(self, ctx):
         """Trivia Plus!"""
@@ -60,7 +59,7 @@ class TriviaPlus(commands.Cog):
             for choice in choices:
                 answers_formatted += choice + '\n'
             await ctx.send(question + "\n" + answers_formatted)
-            continue_ = await self.wait_for_answer()
+            continue_ = await self.wait_for_answer(correct_answer)
             await ctx.send(correct_answer)
 
         await self.ctx.send(_("There are no more questions!"))
