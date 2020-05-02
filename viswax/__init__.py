@@ -1,4 +1,4 @@
-from .vixwax.py import Viswax
+from .viswax.py import Viswax
 
 
 def setup(bot):
