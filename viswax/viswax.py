@@ -101,7 +101,7 @@ class Viswax(commands.Cog):
         await ctx.send("First Rune: " + a[0] + "\n" + "Second Rune: " + a[1] + ", " + a[2] + ", " + a[3])
 
     @commands.command()
-    async def myviswax(self, ctx: commands.Context, *, words: str):
+    async def myviswax(self, ctx: commands.Context, *, word: str):
         """Calculates the cost of your daily viswax combinations in Runescape."""
         pullVis()
         total1 = 0
@@ -113,6 +113,13 @@ class Viswax(commands.Cog):
         total1 += calc_cost(a[1])
         total2 += calc_cost(a[2])
         total3 += calc_cost(a[3])
+
+        word = word.capitalize()
+        word = word + " Rune"
+
+        total1 += calc_cost(word)
+        total2 += calc_cost(word)
+        total3 += calc_cost(word)
 
         with request.urlopen(
                 'http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=32092') as response:
