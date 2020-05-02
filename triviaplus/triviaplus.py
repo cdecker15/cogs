@@ -3,6 +3,7 @@ from redbot.core import commands
 import urllib.request as request
 import json
 import random
+import time
 
 
 def un_escape(s):
@@ -33,7 +34,9 @@ class TriviaPlus(commands.Cog):
             for answer in result['incorrect_answers']:
                 choices.append(un_escape(answer))
                 random.shuffle(choices)
-            answers_formatted = "";
+            answers_formatted = "- ";
             for choice in choices:
-                answers_formatted += choice + '\n'
+                answers_formatted += choice + '\n - '
             await ctx.send(question + "\n" + answers_formatted)
+            time.wait(10)
+            await ctx.send(correct_answer)
