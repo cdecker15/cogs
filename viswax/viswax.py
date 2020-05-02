@@ -90,7 +90,12 @@ def calc_cost(rune):
         source = response.read()
         data = json.loads(source)
 
-    return (int(data['item']['current']['price']).replace(',')) * amount
+    result = data['item']['current']['price']
+
+    if type(result == str):
+        result = result.replace(',', '')
+        result = int(result)
+    return result * amount
 
 
 class Viswax(commands.Cog):
