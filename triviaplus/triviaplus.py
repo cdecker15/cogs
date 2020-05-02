@@ -5,7 +5,7 @@ import json
 import random
 
 
-class Viswax(commands.Cog):
+class TriviaPlus(commands.Cog):
 
     @commands.command()
     async def triviaplus(self, ctx):
