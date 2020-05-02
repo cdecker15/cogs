@@ -23,7 +23,7 @@ def check_answer(self):
 async def wait_for_answer(self):
     try:
         message = await self.ctx.bot.wait_for(
-            "message", check=self.check_answer(answer), timeout=10
+            "message", check=self.check_answer(self), timeout=10
         )
     except asyncio.TimeoutError:
         if time.time() - self._last_response >= 10:
