@@ -16,14 +16,14 @@ def un_escape(s):
     return s
 
 
-def check_answer(self):
+def check_answer(self, correct_answer):
     return True
 
 
-async def wait_for_answer(self):
+async def wait_for_answer(self, correct_answer):
     try:
         message = await self.ctx.bot.wait_for(
-            "message", check=self.check_answer(self), timeout=10
+            "message", check=self.check_answer(self, correct_answer), timeout=10
         )
     except asyncio.TimeoutError:
         if time.time() - self._last_response >= 10:
@@ -60,7 +60,7 @@ class TriviaPlus(commands.Cog):
             for choice in choices:
                 answers_formatted += choice + '\n'
             await ctx.send(question + "\n" + answers_formatted)
-            continue_ = await self.wait_for_answer(self)
+            continue_ = await self.wait_for_answer(self, correct_answer)
             await ctx.send(correct_answer)
 
         await self.ctx.send(_("There are no more questions!"))
