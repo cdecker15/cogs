@@ -45,4 +45,4 @@ class Viswax(commands.Cog):
             viswax_cost = float(viswax_cost) * 1000
 
         viswax_cost = int(viswax_cost) * 100
-        await ctx.send("Today's viswax cost: " + viswax_cost)
+        await ctx.send("Today's viswax cost: " + str(viswax_cost))
