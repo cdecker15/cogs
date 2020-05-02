@@ -35,5 +35,5 @@ class TriviaPlus(commands.Cog):
                 random.shuffle(choices)
             answers_formatted = "";
             for choice in choices:
-                final += choice + '\n'
+                answers_formatted += choice + '\n'
             await ctx.send(question + "\n" + answers_formatted)
