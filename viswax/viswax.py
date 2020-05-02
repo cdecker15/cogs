@@ -93,8 +93,8 @@ def calc_cost(rune):
     result = data['item']['current']['price']
 
     if isinstance(result, str):
-        result = (result.replace(',', '')
-        return int(result) * amount
+        result = int(result.replace(',', ''))
+        result = result * amount
 
     return result * amount
 
