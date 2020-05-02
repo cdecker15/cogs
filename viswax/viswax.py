@@ -126,4 +126,4 @@ class Viswax(commands.Cog):
             viswax_cost = float(viswax_cost) * 1000
 
         viswax_cost = int(viswax_cost) * 100
-        await ctx.send(str(total1) + "Viswax (100) at today's price: " + str(viswax_cost))
+        await ctx.send("First Rune: " + a[0] + "\n" + "Second Rune: " + a[1] + ", " + a[2] + ", " + a[3] + "\nCost of Possibility 1: " + str(total1) + "\nCost of Possibility 2: " + str(total2) + "\nCost of Possibility 3: " + str(total3) +"\nViswax (100) at today's price: " + str(viswax_cost))
