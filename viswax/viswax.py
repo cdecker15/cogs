@@ -36,12 +36,12 @@ class Viswax(commands.Cog):
         total1 = 0
         total2 = 0
         total3 = 0
-        total1 += calc_cost(a[0])
-        total1 += calc_cost(a[1])
-        total2 += calc_cost(a[0])
-        total2 += calc_cost(a[2])
-        total3 += calc_cost(a[0])
-        total3 += calc_cost(a[3])
+        #total1 += calc_cost(a[0])
+        #total1 += calc_cost(a[1])
+        #total2 += calc_cost(a[0])
+        #total2 += calc_cost(a[2])
+        #total3 += calc_cost(a[0])
+        #total3 += calc_cost(a[3])
 
         with request.urlopen(
                 'http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=32092') as response:
