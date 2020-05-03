@@ -10,6 +10,7 @@ a = []
 
 
 def pullVis():
+	a.clear()
     URL = 'https://warbandtracker.com/goldberg/'
     page = requests.get(URL)
 
