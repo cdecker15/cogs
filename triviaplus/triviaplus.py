@@ -18,7 +18,7 @@ def un_escape(s):
 
 class TriviaPlus(commands.Cog):
     @commands.command()
-    async def triviaplus(self, ctx: commands.Context, *, amount: int):
+    async def triviaplus(self, ctx: commands.Context, *, amount: str):
         """Trivia Plus!"""
 
         with request.urlopen('https://opentdb.com/api.php?amount=' + amount) as response:
