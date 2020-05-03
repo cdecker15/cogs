@@ -42,5 +42,3 @@ class TriviaPlus(commands.Cog):
             await ctx.send(question + "\n" + answers_formatted)
             continue_ = await wait_for_answer()
             await ctx.send(correct_answer)
-
-        await ctx.send(_("There are no more questions!"))
