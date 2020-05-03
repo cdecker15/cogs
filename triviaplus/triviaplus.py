@@ -41,3 +41,4 @@ class TriviaPlus(commands.Cog):
             await ctx.send(question + "\n" + answers_formatted)
             time.sleep(10)
             await ctx.send(correct_answer)
+            time.sleep(3)
