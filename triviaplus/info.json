@@ -1,0 +1,16 @@
+{
+    "author": [
+        "Jenke",
+        "Hal"
+    ],
+    "name": "TriviaPlus",
+    "disabled": false,
+    "short": "Trivia to the plus",
+    "description": "Trivia",
+    "tags": [
+        "triviaplus"
+    ],
+	"requirements": [],
+    "hidden": false,
+    "min_bot_version": "3.3.0"
+}
