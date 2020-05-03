@@ -40,7 +40,7 @@ class TriviaPlus(commands.Cog):
             for choice in choices:
                 answers_formatted += choice + '\n'
             await ctx.send(question + "\n" + answers_formatted)
-
+            continue_ = await wait_for_answer()
             await ctx.send(correct_answer)
 
-        await self.ctx.send(_("There are no more questions!"))
+        await ctx.send(_("There are no more questions!"))
