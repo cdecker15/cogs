@@ -27,9 +27,8 @@ class TriviaPlus(commands.Cog):
 
         data = data['results']
 
-        choices = []
-
         for result in data:
+            choices = []
             question = un_escape(result['question'])
             correct_answer = un_escape(result['correct_answer'])
             choices.append(correct_answer)
