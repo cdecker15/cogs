@@ -1,6 +1,6 @@
 {
     "author" : ["yourname (discord#identifer)"],
-    "install_msg" : "Thank you for installing my repository.",
+    "install_msg" : "Thank you for installing my repository!",
     "name" : "J&H Cogs",
     "short" : "Various good cogs.",
     "description" : "Our cogs do everything.",
